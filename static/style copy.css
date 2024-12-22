@@ -1,0 +1,111 @@
+/* Определение переменных CSS */
+:root {
+    --main-color: #4B0082; /* Индиго */
+    --secondary-color: #FF4500; /* Оранжево-красный */
+    --bg-color: #E6E6FA; /* Лаванда */
+    --text-color: #222; /* Темный серый */
+    --button-main-color: #32CD32; /* Лайм */
+    --button-hover-color: #FFD700; /* Золотой */
+    --link-default-color: #0000CD; /* Синий */
+    --link-hover-color: #FF6347; /* Томатный */
+}
+
+/* Стили для body */
+body {
+    font-family: 'Courier New', monospace;
+    margin: 30px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Стили для заголовков */
+h1 {
+    text-align: left;
+    color: var(--main-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Стили для форм */
+form {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для меток */
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Стили для полей ввода */
+input[type="text"], input[type="number"], select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+/* Стили для кнопок */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--button-main-color);
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Стили для таблиц */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+/* Стили для ссылок */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: var(--link-default-color);
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}

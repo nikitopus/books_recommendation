@@ -1,0 +1,146 @@
+/* Определение переменных CSS */
+:root {
+    --main-color: #8A2BE2; /* Фиолетовый */
+    --secondary-color: #FF69B4; /* Розовый */
+    --bg-color: #F0F8FF; /* Голубой */
+    --text-color: #333; /* Темно-серый */
+    --button-main-color: #FF8C00; /* Темно-оранжевый */
+    --button-hover-color: #40E0D0; /* Бирюзовый */
+    --link-default-color: #008080; /* Темно-бирюзовый */
+    --link-hover-color: #FF1493; /* Темно-розовый */
+}
+
+/* Стили для body */
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Стили для заголовков */
+h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Стили для форм */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px dashed var(--secondary-color);
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для меток */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Стили для полей ввода */
+input[type="text"], input[type="number"], select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: var(--button-main-color);
+    outline: none;
+}
+
+/* Стили для кнопок */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-main-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05);
+}
+
+/* Стили для таблиц */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    border: 1px solid var(--secondary-color);
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Стили для ссылок */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--link-default-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+/* Дополнительные стили для уникальности */
+.custom-box {
+    padding: 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.custom-box h2 {
+    color: var(--main-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.custom-box p {
+    color: #666;
+    line-height: 1.4;
+}

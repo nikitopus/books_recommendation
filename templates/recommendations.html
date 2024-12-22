@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендации по книгам</title>
+    <!-- Подключение стилей из статической папки -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Рекомендации по книгам</h1>
+    <!-- Таблица с рекомендациями -->
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Жанр</th>
+            <th>Год</th>
+            <th>Рейтинг</th>
+            <th>Действия</th>
+        </tr>
+        <!-- Цикл для отображения каждой книги -->
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.genre|join(', ') }}</td>
+            <td>{{ book.year }}</td>
+            <td>{{ book.rating }}</td>
+            <td>
+                <!-- Проверка, добавлена ли книга в список для чтения -->
+                {% if book.added_to_read_list %}
+                <form method="POST" action="{{ url_for('remove_from_read_list') }}" style="display:inline;">
+                    <input type="hidden" name="book_title" value="{{ book.title }}">
+                    <button type="submit">Удалить из списка для прочтения</button>
+                </form>
+                {% else %}
+                <!-- Форма для добавления книги в список для чтения -->
+                <form method="POST" action="{{ url_for('add_to_read_list') }}" style="display:inline;">
+                    <input type="hidden" name="book_title" value="{{ book.title }}">
+                    <button type="submit">Добавить в список для прочтения</button>
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- Форма для сохранения рекомендаций в файл -->
+    <form method="POST" action="{{ url_for('save_recommendations') }}">
+        <label for="file_format">Сохранить в:</label>
+        <select name="file_format">
+            <option value="csv">CSV</option>
+            <option value="json">JSON</option>
+        </select>
+        <button type="submit">Сохранить</button>
+    </form>
+    <!-- Ссылка для возврата к форме предпочтений -->
+    <a href="{{ url_for('index') }}">Вернуться к предпочтениям</a>
+</body>
+</html>

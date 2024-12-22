@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендательная система книг</title>
+    <!-- Подключение стилей из статической папки -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Рекомендательная система книг</h1>
+    <!-- Форма для отправки данных на сервер -->
+    <form method="POST" action="{{ url_for('index') }}">
+        <!-- Поле ввода для жанров -->
+        <label for="genres">Жанры:</label>
+        <input type="text" name="genres" placeholder="Фантастика, Детектив и т.д." required>
+        <br>
+        <!-- Поле ввода для авторов -->
+        <label for="authors">Авторы:</label>
+        <input type="text" name="authors" placeholder="Имена авторов" required>
+        <br>
+        <!-- Поле ввода для ключевых слов -->
+        <label for="keywords">Ключевые слова:</label>
+        <input type="text" name="keywords" placeholder="Ключевые слова" required>
+        <br>
+        <!-- Поле ввода для года фильтрации -->
+        <label for="year_filter">Год фильтрации:</label>
+        <input type="number" name="year_filter" placeholder="Год">
+        <br>
+        <!-- Чекбокс для выбора только указанных жанров -->
+        <label for="only_selected_genres">Только указанные жанры:</label>
+        <input type="checkbox" name="only_selected_genres">
+        <br>
+        <!-- Выпадающий список для выбора критерия сортировки -->
+        <label for="sort_by">Сортировать по:</label>
+        <select name="sort_by">
+            <option value="rating">Рейтингу</option>
+            <option value="title">Названию</option>
+            <option value="year">Году публикации</option>
+        </select>
+        <br>
+        <!-- Кнопка для отправки формы -->
+        <button type="submit">Получить рекомендации</button>
+    </form>
+</body>
+</html>
